@@ -1,2 +1,2 @@
 #!/bin/bash
-awk 'FNR==3 {print}' iacta
+cat ./iacta | tail --lines=+3 | head -1
