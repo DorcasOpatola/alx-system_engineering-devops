@@ -1,6 +1,6 @@
 # Outage Postmortem: Web Stack Debugging Project #
 
-
+![A group of engineers querying a database.](/0x19-postmortem/Image/_dddd7d5b-1eca-4947-a4f5-31cb814fdf7c.jpg)
 
 ## Issue Summary: ##
 <p> Outage Duration: August 7, 2023, 14:30 - August 7, 2023, 18:45 (UTC)</p>
