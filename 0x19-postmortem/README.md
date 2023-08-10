@@ -2,15 +2,16 @@
 
 
 
-## Issue Summary:##
-> Outage Duration: August 7, 2023, 14:30 - August 7, 2023, 18:45 (UTC)
-> Impact: Web application unavailability; users experienced intermittent errors and slow page loads;
+## Issue Summary: ##
+<p> Outage Duration: August 7, 2023, 14:30 - August 7, 2023, 18:45 (UTC)</p>
+<p> Impact: Web application unavailability; users experienced intermittent errors and slow page loads; 
     35% of users were affected.
+</p>
 
-## Root Cause:##
+## Root Cause: ##
 The root cause of the outage was identified as a database connection leak. Over time, numerous unclosed database connections were consuming resources, leading to performance degradation and eventual service unavailability.
 
-## Timeline:##
+## Timeline: ##
 - **14:30:** Issue detected through monitoring alert indicating increased response time.
 - **14:45:** Initial investigation by the operations team revealed elevated CPU and memory usage.
 - **15:15:** Assumption made that recent code deployment might have introduced a memory leak.
@@ -22,7 +23,7 @@ The root cause of the outage was identified as a database connection leak. Over 
 - **18:00:** Patch deployed to close unclosed database connections.
 - **18:45:** Application fully recovered and back to normal operations.
 
-## Root Cause and Resolution:##
+## Root Cause and Resolution: ##
 The issue was caused by unclosed database connections in the application code, leading to resource exhaustion. During normal operation, connections were being opened but not properly closed, accumulating over time and straining system resources.
 
 To resolve the issue, the development team:
@@ -30,7 +31,7 @@ To resolve the issue, the development team:
 2. Implemented a connection pool management system to ensure proper handling of database connections.
 3. Released a hotfix to close all existing unclosed connections and prevent future leaks.
 
-## Corrective and Preventative Measures:##
+## Corrective and Preventative Measures: ##
 1. **Code Review and Testing:** Enforce thorough code reviews and testing, especially before deploying changes to production, to catch issues like unclosed database connections early.
 2. **Automated Monitoring:** Implement automated monitoring for resource utilization, database connection counts, and application response times to quickly identify and address abnormal behavior.
 3. **Regular Database Maintenance:** Establish routine database maintenance tasks to identify and close idle connections.
@@ -38,7 +39,7 @@ To resolve the issue, the development team:
 5. **Documentation and Training:** Provide comprehensive documentation and training for developers to properly manage database connections and resources.
 6. **Incident Response Plan:** Develop a clear incident response plan outlining escalation procedures and responsibilities to minimize downtime during future incidents.
 
-## Tasks to Address the Issue:## 
+## Tasks to Address the Issue: ##
 1. Patch the codebase to close unclosed database connections.
 2. Implement connection pool management to prevent future leaks.
 3. Review recent code deployments for potential performance issues.
